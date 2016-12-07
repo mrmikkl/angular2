@@ -2,24 +2,28 @@
   {{title}}
 </h1>
 <div>
-  <app-simple-form></app-simple-form>
-  {{mail.singleMessage}}
+  <div>
+    <app-simple-form></app-simple-form>
+  </div>
 
   <hr>
 
-  {{api}}
+  {{mail.singleMessage}}
 
+  <hr> {{api}}
   <hr>
 
   <ul>
     <li *ngFor="let message of mail.messages">
-      {{message}}
+      {{message.text}}
     </li>
   </ul>
 
   <hr>
 
   <ul>
-    <app-simple-form *ngFor="let message of mail.messages" [message]="message"></app-simple-form>
+    <app-simple-form *ngFor="let message of mail.messages" [message]="message.text" (update)="onUpdate(message.id, $event.text)"></app-simple-form>
   </ul>
+
+  <hr>
 </div>

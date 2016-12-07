@@ -9,7 +9,10 @@ import { MailService } from './mail.service';
 export class AppComponent {
   title = 'app works!';
 
-  constructor(private mail: MailService, @Inject('api') private api){
+  constructor(private mail: MailService, @Inject('api') private api) {
+  }
 
+  onUpdate(id, text) {
+    this.mail.update(id, text);
   }
 }
