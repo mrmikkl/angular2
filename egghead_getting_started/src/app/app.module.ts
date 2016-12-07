@@ -17,7 +17,12 @@ import { MailService } from './mail.service';
     FormsModule,
     HttpModule
   ],
-  providers: [MailService],
+  providers: [MailService, {provide: 'api', useValue: 'http://localhost:3000'}],
+  /** 
+   * providers: [{provide:'mail', useClass:MailService}] 
+   * Erlaubt inject über Name anstatt über Type 
+   * Bspw: constructor(@Inject('mail') private mail: MailService){...}
+  */
   bootstrap: [AppComponent]
 })
 export class AppModule { }
