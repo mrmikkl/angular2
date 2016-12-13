@@ -12,6 +12,11 @@ input{
     width: 300px;
 }
 
+input:focus {
+    font-weight: bold;
+    outline: none;
+}
+
 button{
     width: 150px;
     margin: auto;
@@ -19,4 +24,8 @@ button{
 
 div{
     margin:auto;
+}
+
+.mousedown{
+    border: 2px solid green;
 }
